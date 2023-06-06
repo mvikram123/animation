@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line rotate</title>
+    <style>
+        .container{
+            display: flex;
+            width:500px;
+            height:500px;
+            justify-content: center;
+            align-items: center;
+            background-color: yellow;
+            
+        }
+        #line{
+            width:200px;
+            height:2px;
+            background-color: aqua;
+            text-align: center;
+           
+        }
+        .line{
+             animation : rotate 2s linear infinite;
+        }
+        @keyframes rotate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform:rotate(-360deg);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showElement()">show</button>
+    <button onclick="startAnimation()" id="start-stop">start</button>
+    <!-- <button onclick="stopAnimation()">stop</button> -->
+
+    <div class="container">
+        <!-- <div id="line" class="line"></div> -->
+
+         </div>
+    <script>
+        const container=document.getElementsByClassName("container")[0];
+        const button=document.getElementById("start-stop");
+        function showElement()
+        {
+            container.innerHTML='';
+            const div=document.createElement("div");
+            div.id="line";
+            container.append(div);
+        }
+        function startAnimation()
+        {
+            const line=document.getElementById("line");
+            // line.className="line";
+            if(line.className) // class name is present here
+            {
+                line.className="";
+                button.innerText="start Animation";
+            }
+            else  // class name is not present here
+            {
+                    line.className="line";
+                    button.innerText="stop Animation";       
+             }
+
+
+        }
+    
+        // function stopAnimation(){
+        //     const line=document.getElementById("line");
+        //     line.className="";
+        // }
+
+        </script>
+    
+</body>
+</html>
