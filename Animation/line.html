@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line rotate</title>
+    <style>
+        .container{
+            display: flex;
+            width:500px;
+            height:500px;
+            justify-content: center;
+            align-items: center;
+            background-color: yellow;
+            
+        }
+        #line{
+            width:200px;
+            height:2px;
+            background-color: aqua;
+            text-align: center;
+            animation : rotate 2s linear infinite;
+        }
+        @keyframes rotate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <button value="start">start</button>
+
+    <div class="container">
+        <div id="line">
+
+        </div>
+    </div>
+    
+</body>
+</html>
